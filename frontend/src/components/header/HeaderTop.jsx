@@ -1,10 +1,10 @@
 import './header.css';
 
-const HeaderTop = () => {
+const HeaderTop = ({ toggle, setToggle }) => {
     return (
         <div className="header-top">
-            <div className="header-top-menu">
-                <i class="bi bi-list"></i>
+            <div onClick={() => { setToggle(prev => !prev) }} className="header-top-menu">
+                {toggle ? <i className="bi bi-x"></i> : <i className="bi bi-list"></i>}
             </div>
             <div className="header-top-phone">
                 <i className="bi bi-telephone-fill"></i>

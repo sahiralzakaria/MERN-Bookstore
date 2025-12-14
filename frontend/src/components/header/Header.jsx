@@ -1,14 +1,17 @@
+import { useState } from 'react'
 import './header.css'
 import HeaderMiddle from './HeaderMiddle'
 import HeaderTop from './HeaderTop'
 import Navbar from './Navbar'
 
 export const Header = () => {
+    const [toggle, setToggle] = useState(false);
+
     return (
         <header className="header">
-            <HeaderTop />
+            <HeaderTop toggle={toggle} setToggle={setToggle} />
             <HeaderMiddle />
-            <Navbar />
+            <Navbar toggle={toggle} setToggle={setToggle} />
         </header>
     )
 }
