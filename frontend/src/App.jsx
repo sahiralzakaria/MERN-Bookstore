@@ -1,6 +1,7 @@
 
 import './App.css'
 import BookSlider from './components/book-slider/BookSlider'
+import Footer from './components/footer/Footer'
 import { Header } from './components/header/Header'
 import HeadingTitle from './components/heading-title/HeadingTitle'
 import Services from './components/services/Services'
@@ -12,8 +13,11 @@ function App() {
 
     <div>
       <Header />
+
       <Slider />
+
       <Services />
+
       <HeadingTitle title="Best Seller" />
       <BookSlider data={bestSellerBooks} />
 
@@ -22,6 +26,8 @@ function App() {
 
       <HeadingTitle title="Most wished for" />
       <BookSlider data={mostWishedForBooks} />
+
+      <Footer />
 
     </div>
   )
