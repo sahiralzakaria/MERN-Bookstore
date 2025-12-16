@@ -5,8 +5,8 @@ const Modal = ({ bookData, setOpenModal }) => {
 
     const { image, title, inStock, rating, reviews, author, price } = bookData;
     return (
-        <div className='modal-container'>
-            <div className="modal-content">
+        <div className='modal-container' onClick={() => setOpenModal(false)}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <i
                     onClick={() => { setOpenModal(false) }}
                     className="bi bi-x-circle-fill modal-icon"
