@@ -1,35 +1,21 @@
-
 import './App.css'
-import BookSlider from './components/book-slider/BookSlider'
 import Footer from './components/footer/Footer'
 import { Header } from './components/header/Header'
-import HeadingTitle from './components/heading-title/HeadingTitle'
-import Services from './components/services/Services'
-import Slider from './components/slider/Slider'
-import { bestSellerBooks, mostGiftedBooks, mostWishedForBooks } from './data/books'
+import HomePage from './pages/home/HomePage'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-
-    <div>
+    <BrowserRouter>
       <Header />
-
-      <Slider />
-
-      <Services />
-
-      <HeadingTitle title="Best Seller" />
-      <BookSlider data={bestSellerBooks} />
-
-      <HeadingTitle title="Most gifted" />
-      <BookSlider data={mostGiftedBooks} />
-
-      <HeadingTitle title="Most wished for" />
-      <BookSlider data={mostWishedForBooks} />
-
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
       <Footer />
+    </BrowserRouter>
 
-    </div>
+
+
   )
 }
 
