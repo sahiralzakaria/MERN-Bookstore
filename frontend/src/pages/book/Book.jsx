@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { bestSellerBooks, mostGiftedBooks, mostWishedForBooks } from "../../data/books";
 import Rating from "../../components/book-slider/Rating";
+import './book.css';
 
 const Book = () => {
     const { id } = useParams();
