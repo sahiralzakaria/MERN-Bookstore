@@ -64,6 +64,9 @@
 
 .footer-links {
     padding: 5px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .footer-link {
@@ -71,6 +74,7 @@
     color: var(--main-color);
     margin-bottom: 10px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .footer-address-item {
