@@ -42,3 +42,112 @@
     height: 100%;
     object-fit: contain;
 }
+
+.modal-content-info {
+    padding: 30px;
+    width: 60%;
+}
+
+.modal-content-info-title {
+    font-size: 40px;
+}
+
+.modal-content-info-stock {
+    font-size: 21px;
+    margin: 15px 0;
+}
+
+.modal-content-info-author {
+    font-size: 21px;
+    font-weight: 600;
+    margin: 15px 0;
+    color: teal;
+}
+
+.modal-content-info-author b,
+.modal-content-info-price b {
+    color: black;
+}
+
+.modal-content-info-price {
+    font-size: 25px;
+    color: crimson;
+    font-weight: 600;
+}
+
+.modal-add-to-cart {
+    margin: 30px 0;
+}
+
+.modal-add-to-cart-input {
+    margin-right: 15px;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+.modal-add-to-cart-btn {
+    border: 1px solid green;
+    border-radius: 7px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: transparent;
+    color: green;
+    font-size: 21px;
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+}
+
+.modal-add-to-cart-btn:hover {
+    background-color: aquamarine;
+}
+
+.modal-content-info-link {
+    text-decoration: none;
+    font-size: 24px;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 7px;
+    color: white;
+    font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 920px) {
+    .modal-content-img {
+        width: 30%;
+    }
+
+    .modal-content-info {
+        width: 70%;
+    }
+
+    .modal-content-info-title {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 740px) {
+    .modal-content {
+        height: auto;
+        width: 90%;
+    }
+
+    .modal-content-img {
+        display: none;
+    }
+
+    .modal-content-info {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .modal-add-to-cart-input {
+        margin-bottom: 10px;
+    }
+}
