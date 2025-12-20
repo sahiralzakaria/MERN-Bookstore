@@ -101,8 +101,6 @@ export const authors = [
         name: "James Clear",
         image: "/authors/james.jpg",
     },
-
-
     {
         id: 26,
         name: "Napolen Hill",
