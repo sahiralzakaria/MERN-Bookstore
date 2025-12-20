@@ -1,4 +1,4 @@
-import React from 'react'
+import './contact.css'
 
 const Contact = () => {
     return (
@@ -12,10 +12,10 @@ const Contact = () => {
                         Location
                     </div>
                     <p className="contact-item-text">
-                        Turkey <br />
-                        (Originally from Deir ez-Zor, Syria)
+                        <span>Turkey</span>
                     </p>
                 </div>
+
 
                 {/* Email */}
                 <div className="contact-item">
