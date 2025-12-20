@@ -16,7 +16,6 @@ const Contact = () => {
                     </p>
                 </div>
 
-
                 {/* Email */}
                 <div className="contact-item">
                     <div className="contact-item-icon">

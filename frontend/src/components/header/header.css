@@ -24,6 +24,10 @@
     cursor: pointer;
 }
 
+.header-top-link {
+    text-decoration: none;
+}
+
 .header-top-phone,
 .header-top-text,
 .header-top-link {
