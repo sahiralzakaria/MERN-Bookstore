@@ -6,7 +6,7 @@ import CartContext from '../../context/cartContext'
 
 const Cart = () => {
 
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
     const totlaPrice = cartItems.reduce((acc, cur) => acc + cur.price * cur.quantity, 0).toFixed(2);
 
     return (
@@ -15,7 +15,7 @@ const Cart = () => {
             <div className="cart-wrapper">
                 <div className="cart-items">
                     {cartItems.map((item) => (
-                        <CartItem key={item.id} item={item} />
+                        <CartItem key={item.id} item={item} removeFromCart={removeFromCart} addToCart={addToCart} />
 
                     ))}
                 </div>

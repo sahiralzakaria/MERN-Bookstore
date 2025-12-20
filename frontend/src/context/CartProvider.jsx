@@ -8,14 +8,21 @@ const CartProvider = ({ children }) => {
 
     //ADD TO CART
     const addToCart = (item) => {
-        setCartItems((prev) => [...prev, item])
+        const isExist = cartItems.find(cart => cart.id === item.id);
+        if (isExist) {
+            setCartItems(
+                cartItems.map(
+                    (cartItem) => cartItem.id === item.id ? item : cartItem
+                )
+            )
+        } else { setCartItems((prev) => [...prev, item]) }
+
     }
 
     //REMOVE FROM CART
     const removeFromCart = (id) => {
         const cart = cartItems.filter((c) => c.id !== id)
         setCartItems(cart);
-        console.log(cartItems);
     }
 
 

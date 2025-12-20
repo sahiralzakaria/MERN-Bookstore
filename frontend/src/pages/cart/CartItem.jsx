@@ -1,7 +1,7 @@
 import React from 'react'
 
-const CartItem = ({ item }) => {
-    const { image, title, author, quantity, price } = item
+const CartItem = ({ item, addToCart, removeFromCart }) => {
+    const { image, title, author, quantity, price, id } = item
     return (
         <div className="cart-item">
             <img
@@ -23,11 +23,13 @@ const CartItem = ({ item }) => {
                 <div>
                     <div className="cart-item-quantity">
                         <button
+                            onClick={() => addToCart({ ...item, quantity: parseInt(item.quantity) + 1 })}
                             className="bi bi-plus-lg"
                         ></button>
                         <b>{quantity}</b>
                         <button
                             disabled={quantity <= 1}
+                            onClick={() => addToCart({ ...item, quantity: parseInt(item.quantity) - 1 })}
                             className="bi bi-dash-lg"
                         ></button>
                     </div>
@@ -35,6 +37,7 @@ const CartItem = ({ item }) => {
                         ${(price * quantity).toFixed(2)}
                     </div>
                     <i
+                        onClick={() => removeFromCart(id)}
                         className="bi bi-trash-fill"
                     ></i>
                 </div>
