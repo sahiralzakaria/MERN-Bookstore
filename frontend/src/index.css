@@ -1,15 +1,6 @@
 :root {
     --primary-color: #1976d2;
-    /* الأزرق الأساسي */
-    --primary-dark: #125aa0;
-    /* hover للأزرار */
-    --accent-color: #ff9800;
-    /* تمييز السعر / العروض */
     --main-color: #f2f2f2;
-    /* خلفيات */
-    --text-color: #2e2e2e;
-    /* نص أساسي */
-    --muted-text: #6b6b6b;
 }
 
 * {
