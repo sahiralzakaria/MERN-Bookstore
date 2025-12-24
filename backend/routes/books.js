@@ -82,6 +82,33 @@ router.post('/', (req, res) => {
     res.status(201).json(book); // 201 => created Successfully
 });
 
+/**
+ * @desc Update a book
+ * @route /api/books/:id
+ * @method PUT
+ * @access public
+*/
+
+router.put('/:id', (req, res) => {
+
+    const { error } = validateUpdateBook(req.body);
+
+    if (error) {
+        return res.status(400).json({ message: error.details[0].message });
+    }
+
+    const book = books.find(b => b.id === parseInt(req.params.id));
+    if (book) {
+        res.status(200).json({ message: 'book has been updated' });
+    } else {
+        res.status(404).json({ message: 'book not found' })
+    }
+
+})
+
+
+// validate create book
+
 function validateCreateBook(obj) {
     const schema = Joi.object({
         title: Joi.string().trim().min(3).max(200).required(),
@@ -89,6 +116,20 @@ function validateCreateBook(obj) {
         description: Joi.string().trim().min(3).max(500).required(),
         price: Joi.number().positive().required(),
         cover: Joi.string().trim().required()
+    });
+
+    return schema.validate(obj);
+}
+
+// validate update book
+
+function validateUpdateBook(obj) {
+    const schema = Joi.object({
+        title: Joi.string().trim().min(3).max(200),
+        author: Joi.string().trim().min(3).max(200),
+        description: Joi.string().trim().min(3).max(500),
+        price: Joi.number().positive(),
+        cover: Joi.string().trim()
     });
 
     return schema.validate(obj);
