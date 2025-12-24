@@ -106,6 +106,24 @@ router.put('/:id', (req, res) => {
 
 })
 
+/**
+ * @desc Delete a book
+ * @route /api/books/:id
+ * @method DELETE
+ * @access public
+*/
+
+router.delete('/:id', (req, res) => {
+
+    const book = books.find(b => b.id === parseInt(req.params.id));
+    if (book) {
+        res.status(200).json({ message: 'book has been deleted' });
+    } else {
+        res.status(404).json({ message: 'book not found' })
+    }
+
+})
+
 
 // validate create book
 
