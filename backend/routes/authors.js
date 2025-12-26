@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express();
 const Joi = require('joi');
+const { Author } = require('../models/Author')
 
 const authors = [
     {
