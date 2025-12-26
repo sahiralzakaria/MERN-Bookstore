@@ -6,7 +6,7 @@ const AuthorSchema = new mongoose.Schema({
         required: true,
         trim: true,
         minlength: 3,
-        minlength: 200,
+        maxlength: 200,
 
     },
 
@@ -15,7 +15,7 @@ const AuthorSchema = new mongoose.Schema({
         required: true,
         trim: true,
         minlength: 3,
-        minlength: 200,
+        maxlength: 200,
 
     },
     nationality: {
@@ -23,7 +23,7 @@ const AuthorSchema = new mongoose.Schema({
         required: true,
         trim: true,
         minlength: 2,
-        minlength: 100,
+        maxlength: 100,
 
     },
     image: {

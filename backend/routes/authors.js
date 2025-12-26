@@ -8,35 +8,35 @@ const authors = [
     {
         id: 1,
         firstName: "Sahir",
-        LastName: "ALZAKARIA",
+        lastName: "ALZAKARIA",
         nationality: "Syrian",
         image: "default-img.png"
     },
     {
         id: 2,
         firstName: "Ahmed",
-        LastName: "Al-Hassan",
+        lastName: "Al-Hassan",
         nationality: "Jordanian",
         image: "default-img.png"
     },
     {
         id: 3,
         firstName: "Mohammad",
-        LastName: "Al-Farouq",
+        lastName: "Al-Farouq",
         nationality: "Saudi",
         image: "default-img.png"
     },
     {
         id: 4,
         firstName: "Yousef",
-        LastName: "Al-Masri",
+        lastName: "Al-Masri",
         nationality: "Egyptian",
         image: "default-img.png"
     },
     {
         id: 5,
         firstName: "Khaled",
-        LastName: "Al-Tamimi",
+        lastName: "Al-Tamimi",
         nationality: "Palestinian",
         image: "default-img.png"
     }
@@ -82,7 +82,7 @@ router.post('/', async (req, res) => {
     }
 
     try {
-        const author = new ({
+        const author = new Author({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             nationality: req.body.nationality,
@@ -90,14 +90,14 @@ router.post('/', async (req, res) => {
         });
 
         const result = await author.save();
-
         res.status(201).json(result);
 
     } catch (error) {
         console.log("error : ", error);
-        res.status(500).json({ message: 'Something went wrong!' })
+        res.status(500).json({ message: 'Something went wrong!', error });
     }
 });
+
 
 /**
  * @desc Update an author
