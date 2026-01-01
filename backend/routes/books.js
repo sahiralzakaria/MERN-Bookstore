@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { verifyTokenAndAdmin } = require("../middlewares/verifyToken");
 const { validateCreateBook, validateUpdateBook, Book } = require('../models/Book');
 const asyncHandler = require('express-async-handler');
 
@@ -38,10 +39,10 @@ router.get('/:id', asyncHandler(
  * @desc create new book
  * @route /api/books
  * @method POST
- * @access public
+ * @access private (only admin)
 */
 
-router.post('/', asyncHandler(
+router.post('/', verifyTokenAndAdmin, asyncHandler(
     async (req, res) => {
         const { error } = validateCreateBook(req.body);
         if (error) {
@@ -63,10 +64,10 @@ router.post('/', asyncHandler(
  * @desc Update a book
  * @route /api/books/:id
  * @method PUT
- * @access public
+ * @access private (only admin)
 */
 
-router.put('/:id', asyncHandler(
+router.put('/:id', verifyTokenAndAdmin, asyncHandler(
     async (req, res) => {
         const { error } = validateUpdateBook(req.body);
         if (error) {
@@ -95,10 +96,10 @@ router.put('/:id', asyncHandler(
  * @desc Delete a book
  * @route /api/books/:id
  * @method DELETE
- * @access public
+ * @access private (only admin)
 */
 
-router.delete('/:id', asyncHandler(
+router.delete('/:id', verifyTokenAndAdmin, asyncHandler(
     async (req, res) => {
         const book = await Book.findById(req.params.id);
 
